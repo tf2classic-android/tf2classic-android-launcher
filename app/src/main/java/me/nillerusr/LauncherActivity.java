@@ -23,7 +23,7 @@ public class LauncherActivity extends Activity
 	public static String forced_argv = " -force_vendor_id 0x10DE -force_device_id 0x1180 ";
 	public static String TAG = "LauncherActivity";
 
-	public static String MOD_NAME = "gamedir";
+	public static String MOD_NAME = "tf2classic";
 	public static String PKG_NAME;
 
 	static EditText cmdArgs;
