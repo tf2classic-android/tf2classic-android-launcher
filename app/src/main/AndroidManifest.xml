@@ -18,7 +18,7 @@
 		android:name="android.hardware.microphone"
 		android:required="false" />
 
-	<uses-feature android:glEsVersion="0x00020000" />
+	<uses-feature android:glEsVersion="0x00030002" />
 
 	<application
 		android:allowAudioPlaybackCapture="true"
