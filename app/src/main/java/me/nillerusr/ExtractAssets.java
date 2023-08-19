@@ -57,7 +57,7 @@ public class ExtractAssets
 		{
 			File asset_file = new File( context.getFilesDir().getPath() + "/" + asset );
 
-			Boolean asset_exists = asset_file.exists();
+			boolean asset_exists = asset_file.exists();
 			if( !force && asset_exists )
 			{
 				// chmod is needed here because newer android may reset file permissions
