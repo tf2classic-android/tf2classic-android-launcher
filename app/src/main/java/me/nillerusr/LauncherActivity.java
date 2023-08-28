@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ComponentName;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.util.Linkify;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,7 +20,6 @@ import me.sanyasho.tf2classic.R;
 
 public class LauncherActivity extends Activity
 {
-	public static String forced_argv = " -force_vendor_id 0x10DE -force_device_id 0x1180 ";
 	public static String TAG = "LauncherActivity";
 
 	public static String MOD_NAME = "tf2classic";
@@ -28,6 +27,23 @@ public class LauncherActivity extends Activity
 
 	static EditText cmdArgs;
 	public static SharedPreferences mPref;
+
+	public static String prepareArgv( String oldargv )
+	{
+		StringBuilder sb = new StringBuilder();
+
+		// SanyaSho: force this args to command line
+		sb.append( "-force_vendor_id 0x10DE" ).append( " " );
+		sb.append( "-force_device_id 0x1180" ).append( " " );
+
+		String[] oldargvarr = oldargv.split( " " );
+		for( String str : oldargvarr )
+			sb.append( str ).append( " " );
+
+		String newargv = sb.toString();
+		Log.d( TAG, String.format( "prepareArgv( %s ): %s", oldargv, newargv ) );
+		return newargv;
+	}
 
 	public void onCreate( Bundle savedInstanceState )
 	{
@@ -78,20 +94,20 @@ public class LauncherActivity extends Activity
 
 	public void saveSettings( SharedPreferences.Editor editor )
 	{
-		String argv = cmdArgs.getText().toString();
+		String argv = prepareArgv( cmdArgs.getText().toString() );
 
-		editor.putString( "argv", argv + forced_argv );
+		editor.putString( "argv", argv );
 		editor.commit();
 	}
 
 	private Intent prepareIntent( Intent i )
 	{
-		String argv = cmdArgs.getText().toString();
+		String argv = prepareArgv( cmdArgs.getText().toString() );
 		i.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
 		saveSettings( mPref.edit() );
 
 		if( argv.length() != 0 )
-			i.putExtra( "argv", argv + forced_argv );
+			i.putExtra( "argv", argv );
 
 		i.putExtra( "gamedir", MOD_NAME );
 		i.putExtra( "gamelibdir", getApplicationInfo().nativeLibraryDir );
@@ -102,9 +118,20 @@ public class LauncherActivity extends Activity
 
 	public void startSource( View view )
 	{
-		String argv = cmdArgs.getText().toString();
+		String argv = prepareArgv( cmdArgs.getText().toString() );
 		SharedPreferences.Editor editor = mPref.edit();
-		editor.putString( "argv", argv + forced_argv );
+		editor.putString( "argv", argv );
+
+		if( argv.contains( "-game" ) )
+		{
+			new AlertDialog.Builder( this )
+					.setTitle( R.string.srceng_launcher_error )
+					.setMessage( R.string.tf2classic_game_check )
+					.setPositiveButton( R.string.srceng_launcher_ok, null )
+					.show();
+
+			return;
+		}
 
 		ExtractAssets.extractAssets( this );
 
@@ -120,7 +147,11 @@ public class LauncherActivity extends Activity
 		{
 		}
 
-		new AlertDialog.Builder( this ).setTitle( R.string.srceng_launcher_error ).setMessage( R.string.source_engine_fatal ).setPositiveButton( R.string.srceng_launcher_ok, ( DialogInterface.OnClickListener ) null ).show();
+		new AlertDialog.Builder( this )
+				.setTitle( R.string.srceng_launcher_error )
+				.setMessage( R.string.source_engine_fatal )
+				.setPositiveButton( R.string.srceng_launcher_ok, null )
+				.show();
 	}
 
 	public void onPause()

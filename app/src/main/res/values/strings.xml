@@ -12,4 +12,5 @@
 
 	<string name="new_update">Update available!</string>
 	<string name="source_engine_fatal">Please install Source Engine!</string>
+	<string name="tf2classic_game_check">Please, remove \"-game\" from command line arguments.</string>
 </resources>
