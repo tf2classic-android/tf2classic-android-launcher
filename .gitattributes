@@ -1,0 +1,23 @@
+# gradle stuff
+gradlew				text eol=lf
+gradlew.bat			text eol=lf
+gradle.properties		text eol=lf
+settings.gradle			text eol=lf
+build.gradle			text eol=lf
+gradle-wrapper.properties	text eol=lf
+gradle-wrapper.jar		binary
+
+# eclipse code formatter
+sanyasho.xml			text eol=lf
+
+# android stuff
+proguard-rules.pro		text eol=lf
+*.res				text eol=lf
+AndroidManifest.xml		text eol=lf
+
+# java code
+*.java				text eol=lf
+
+# git stuff
+.gitignore			text eol=lf
+.gitattributes			test eol=lf
