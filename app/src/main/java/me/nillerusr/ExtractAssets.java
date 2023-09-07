@@ -89,7 +89,7 @@ public class ExtractAssets
 		}
 		catch( Exception e )
 		{
-			Log.e( TAG, "Failed to extract vpk:" + e.toString() );
+			Log.e( TAG, "Failed to extract vpk: " + e.toString() );
 		}
 
 		chmod( context.getFilesDir().getPath() + "/" + asset, 0777 );
