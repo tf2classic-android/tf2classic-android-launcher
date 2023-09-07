@@ -30,11 +30,22 @@ public class LauncherActivity extends Activity
 
 	public static String prepareArgv( String oldargv )
 	{
+		boolean bHasForceVendorID = oldargv.contains( "-force_vendor_id" );
+		boolean bHasForceDeviceID = oldargv.contains( "-force_device_id" );
+
 		StringBuilder sb = new StringBuilder();
 
 		// SanyaSho: force this args to command line
-		sb.append( "-force_vendor_id 0x10DE" ).append( " " );
-		sb.append( "-force_device_id 0x1180" ).append( " " );
+		if( !bHasForceVendorID )
+		{
+			Log.d( TAG, "force_vendor_id argv is missing, appending." );
+			sb.append( "-force_vendor_id 0x10DE" ).append( " " );
+		}
+		if( !bHasForceDeviceID )
+		{
+			Log.d( TAG, "force_device_id argv is missing, appending." );
+			sb.append( "-force_device_id 0x1180" ).append( " " );
+		}
 
 		String[] oldargvarr = oldargv.split( " " );
 		for( String str : oldargvarr )
@@ -125,10 +136,10 @@ public class LauncherActivity extends Activity
 		if( argv.contains( "-game" ) )
 		{
 			new AlertDialog.Builder( this )
-					.setTitle( R.string.srceng_launcher_error )
-					.setMessage( R.string.tf2classic_game_check )
-					.setPositiveButton( R.string.srceng_launcher_ok, null )
-					.show();
+				.setTitle( R.string.srceng_launcher_error )
+				.setMessage( R.string.tf2classic_game_check )
+				.setPositiveButton( R.string.srceng_launcher_ok, null )
+				.show();
 
 			return;
 		}
@@ -148,10 +159,10 @@ public class LauncherActivity extends Activity
 		}
 
 		new AlertDialog.Builder( this )
-				.setTitle( R.string.srceng_launcher_error )
-				.setMessage( R.string.source_engine_fatal )
-				.setPositiveButton( R.string.srceng_launcher_ok, null )
-				.show();
+			.setTitle( R.string.srceng_launcher_error )
+			.setMessage( R.string.source_engine_fatal )
+			.setPositiveButton( R.string.srceng_launcher_ok, null )
+			.show();
 	}
 
 	public void onPause()
