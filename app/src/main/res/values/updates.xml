@@ -4,6 +4,7 @@
 	<string name="current_commit" translatable="false"></string>
 	<string name="update_url" translatable="false"></string>
 
-	<string name="default_commandline_arguments" translatable="false">-nobackgroundlevel -force_vendor_id 0x10DE -force_device_id 0x1180</string>
+	<!-- TODO(SanyaSho): 1.17 <string name="default_commandline_arguments" translatable="false">-nobackgroundlevel -force_vendor_id 0x10DE -force_device_id 0x1180</string> -->
+	<string name="default_commandline_arguments" translatable="false">-console -force_vendor_id 0x10DE -force_device_id 0x1180</string>
 	<string name="launcher_icon_description" translatable="false">Team Fortress 2 Classic Logo</string>
 </resources>
