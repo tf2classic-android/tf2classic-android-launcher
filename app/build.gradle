@@ -10,6 +10,12 @@ android {
 	namespace 'me.sanyasho.tf2classic'
 	compileSdk 29
 
+	packagingOptions {
+		jniLibs {
+			useLegacyPackaging true
+		}
+	}
+
 	defaultConfig {
 		applicationId "me.sanyasho"
 		applicationIdSuffix "tf2classic"
