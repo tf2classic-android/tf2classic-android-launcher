@@ -21,3 +21,6 @@ AndroidManifest.xml		text eol=lf
 # git stuff
 .gitignore			text eol=lf
 .gitattributes			test eol=lf
+
+# scripts
+*.sh				text eol=lf
