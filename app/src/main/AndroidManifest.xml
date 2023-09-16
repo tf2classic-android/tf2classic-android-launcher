@@ -23,6 +23,7 @@
 	<application
 		android:allowAudioPlaybackCapture="true"
 		android:icon="@drawable/tf2classic_icon"
+		android:supportsRtl="false"
 		android:label="@string/mod_name"
 		android:requestLegacyExternalStorage="true">
 		<activity
