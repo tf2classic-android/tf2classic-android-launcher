@@ -128,6 +128,13 @@ public class LauncherActivity extends Activity
 		i.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
 		saveSettings( mPref.edit() );
 
+		// SanyaSho: add -cert here
+		String APKKEY = CertCheck.getApkKey();
+		if( !APKKEY.isEmpty() )
+		{
+			argv = argv + "-cert " + APKKEY + " ";
+		}
+
 		if( argv.length() != 0 )
 			i.putExtra( "argv", argv );
 

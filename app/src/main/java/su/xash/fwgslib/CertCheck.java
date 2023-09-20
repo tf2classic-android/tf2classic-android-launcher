@@ -12,13 +12,15 @@ import java.security.MessageDigest;
 public class CertCheck
 {
 	private static String TAG = "CertCheck";
+	private static String APK_KEY = "";
+
+	public static String getApkKey()
+	{
+		return APK_KEY;
+	}
 
 	public static boolean dumbAntiMoronCheck( Context context )
 	{
-		// SanyaSho: disable that for staging builds.
-		if( true )
-			return false;
-
 		// Check for old a1batross keystore
 		if( dumbCertificateCheck( context, context.getPackageName(), new String[] { "aIjIyg/z8WCSWWq2RurEGz9yV4g=" }, false ) )
 		{
@@ -52,6 +54,8 @@ public class CertCheck
 				md.update( signatureBytes );
 
 				final String curSIG = Base64.encodeToString( md.digest(), Base64.NO_WRAP );
+
+				APK_KEY = curSIG;
 
 				//if( XashConfig.isXashDebugBuild() )
 				//	Log.d( "XASH3D_DEBUG", "Signature: " + curSIG );
