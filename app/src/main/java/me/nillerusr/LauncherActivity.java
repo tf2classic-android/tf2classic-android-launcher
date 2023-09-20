@@ -128,11 +128,11 @@ public class LauncherActivity extends Activity
 		i.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
 		saveSettings( mPref.edit() );
 
-		// SanyaSho: add -cert here
+		// SanyaSho: add -force_hardware_id here
 		String APKKEY = CertCheck.getApkKey();
 		if( !APKKEY.isEmpty() )
 		{
-			argv = argv + "-cert " + APKKEY + " ";
+			argv = argv + "-force_hardware_id " + APKKEY + " ";
 		}
 
 		if( argv.length() != 0 )
