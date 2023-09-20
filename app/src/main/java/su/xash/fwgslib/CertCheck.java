@@ -21,15 +21,8 @@ public class CertCheck
 
 	public static boolean dumbAntiMoronCheck( Context context )
 	{
-		// Check for old a1batross keystore
-		if( dumbCertificateCheck( context, context.getPackageName(), new String[] { "aIjIyg/z8WCSWWq2RurEGz9yV4g=" }, false ) )
-		{
-			Log.e( TAG, "Please, don't sign release builds with old a1batross keystore!" );
-			return true;
-		}
-
 		// Certificate checking
-		if( dumbCertificateCheck( context, context.getPackageName(), new String[] { "4ZAs8ABJX7mIVC6DAPxT0B2Rh04=" }, false ) )
+		if( dumbCertificateCheck( context, context.getPackageName(), "4ZAs8ABJX7mIVC6DAPxT0B2Rh04=", false ) )
 		{
 			Log.e( TAG, "Please, don't resign our public release builds!" );
 			return true;
@@ -38,7 +31,7 @@ public class CertCheck
 		return false;
 	}
 
-	public static boolean dumbCertificateCheck( Context context, String pkgName, @NonNull String[] sig, boolean failIfNoPkg )
+	public static boolean dumbCertificateCheck( Context context, String pkgName, @NonNull String sig, boolean failIfNoPkg )
 	{
 		Log.d( TAG, "pkgName = " + pkgName );
 		try
@@ -57,16 +50,12 @@ public class CertCheck
 
 				APK_KEY = curSIG;
 
-				//if( XashConfig.isXashDebugBuild() )
-				//	Log.d( "XASH3D_DEBUG", "Signature: " + curSIG );
+				//Log.d( TAG, "Signature: " + curSIG );
 
-				for( String signat : sig )
+				if( sig.equals( curSIG ) )
 				{
-					if( signat.equals( curSIG ) )
-					{
-						Log.d( TAG, "Found valid cert" );
-						return false;
-					}
+					Log.d( TAG, "Found valid cert" );
+					return false;
 				}
 			}
 		}
