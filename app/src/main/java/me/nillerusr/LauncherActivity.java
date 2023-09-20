@@ -15,6 +15,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import su.xash.fwgslib.CertCheck;
 
 import me.sanyasho.tf2classic.R;
 
@@ -63,6 +66,14 @@ public class LauncherActivity extends Activity
 		requestWindowFeature( 1 );
 
 		super.setTheme( 0x01030224 );
+
+		if( CertCheck.dumbAntiMoronCheck( this ) )
+		{
+			Toast.makeText( this, "Buckle the fuck up little doggy", Toast.LENGTH_LONG ).show();
+
+			finish();
+			return;
+		}
 
 		mPref = getSharedPreferences( "mod", 0 );
 
