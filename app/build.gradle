@@ -7,6 +7,10 @@ plugins {
 }
 
 android {
+	lintOptions {
+		disable 'ExpiredTargetSdkVersion'
+	}
+
 	namespace 'me.sanyasho.tf2classic'
 	compileSdk 29
 
