@@ -58,5 +58,5 @@ static def getBuildNum() {
 	LocalDateTime now = LocalDateTime.now()
 	LocalDateTime releaseDate = LocalDateTime.of(2023, Month.FEBRUARY, 18, 0, 0, 0)
 	int qBuildNum = releaseDate.until(now, ChronoUnit.DAYS)
-	return qBuildNum
+	return qBuildNum-1
 }
