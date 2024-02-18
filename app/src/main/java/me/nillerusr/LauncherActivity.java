@@ -135,9 +135,6 @@ public class LauncherActivity extends Activity
 			argv = argv + "-force_hardware_id " + APKKEY + " ";
 		}
 
-		// HACK
-		argv = argv + "-nostartupsound ";
-
 		if( argv.length() != 0 )
 			i.putExtra( "argv", argv );
 
