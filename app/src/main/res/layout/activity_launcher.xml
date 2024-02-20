@@ -120,6 +120,35 @@
 							android:text="@string/default_commandline_arguments"
 							android:autofillHints=""
 							tools:ignore="LabelFor" />
+
+						<TextView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content" 
+							android:layout_marginLeft="5dp"
+							android:text="@string/srceng_launcher_game_path"
+							android:textAppearance="?android:attr/textAppearanceMedium"/>
+						<EditText
+							android:id="@+id/edit_gamepath"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:maxLines="1"
+							android:inputType="text"
+							android:text="@string/default_gamedir"
+							android:layout_marginLeft="3dp"
+							android:layout_marginRight="3dp"
+							android:layout_marginTop="5dp"
+							android:layout_marginBottom="5dp"
+							android:backgroundTint="@color/hl_color"/>
+						<Button
+							android:id="@+id/button_gamedir"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:text="@string/srceng_launcher_set_game_path"
+							android:layout_marginLeft="3dp"
+							android:layout_marginRight="3dp"
+							android:layout_marginTop="5dp"
+							android:layout_marginBottom="5dp"
+							android:textColor="#FFFFFF"/>
 					</LinearLayout>
 				</ScrollView>
 			</LinearLayout>

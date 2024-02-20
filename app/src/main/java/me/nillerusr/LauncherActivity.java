@@ -1,12 +1,14 @@
 package me.nillerusr;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ComponentName;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +20,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import su.xash.fwgslib.CertCheck;
+import org.libsdl.app.SDLActivity;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import me.sanyasho.tf2classic.R;
 
@@ -28,8 +35,48 @@ public class LauncherActivity extends Activity
 	public static String MOD_NAME = "tf2classic";
 	public static String PKG_NAME;
 
-	static EditText cmdArgs;
-	public static SharedPreferences mPref;
+	static EditText cmdArgs = null, GamePath = null;
+	public SharedPreferences mPref;
+
+	final static int REQUEST_PERMISSIONS = 42;
+
+	public void applyPermissions( final String permissions[], final int code )
+	{
+		List< String > requestPermissions = new ArrayList< String >();
+		for( int i = 0; i < permissions.length; i++ )
+		{
+			if( checkSelfPermission( permissions[ i ] ) != PackageManager.PERMISSION_GRANTED )
+				requestPermissions.add( permissions[ i ] );
+		}
+
+		if( !requestPermissions.isEmpty() )
+		{
+			String[] requestPermissionsArray = new String[ requestPermissions.size() ];
+			for( int i = 0; i < requestPermissions.size(); i++ )
+				requestPermissionsArray[ i ] = requestPermissions.get( i );
+			requestPermissions( requestPermissionsArray, code );
+		}
+	}
+
+	public void onRequestPermissionsResult( int requestCode, String[] permissions, int[] grantResults )
+	{
+		if( requestCode == REQUEST_PERMISSIONS )
+		{
+			if( grantResults[ 0 ] == PackageManager.PERMISSION_DENIED )
+			{
+				Toast.makeText( this, R.string.srceng_launcher_error_no_permission, Toast.LENGTH_LONG ).show();
+				finish();
+			}
+		}
+	}
+
+	public static String getDefaultDir()
+	{
+		File dir = Environment.getExternalStorageDirectory();
+		if( dir == null || !dir.exists() )
+			return "/sdcard/";
+		return dir.getPath();
+	}
 
 	public static String prepareArgv( String oldargv )
 	{
@@ -80,6 +127,7 @@ public class LauncherActivity extends Activity
 		setContentView( R.layout.activity_launcher );
 
 		cmdArgs = findViewById( R.id.edit_cmdline );
+		GamePath = findViewById( R.id.edit_gamepath );
 
 		Button button = findViewById( R.id.button_launch );
 		button.setOnClickListener( LauncherActivity.this::startSource );
@@ -102,7 +150,19 @@ public class LauncherActivity extends Activity
 			dialog.show();
 		} );
 
+		Button dirButton = findViewById( R.id.button_gamedir );
+		dirButton.setOnClickListener( v ->
+		{
+			Intent intent = new Intent( LauncherActivity.this, DirchActivity.class );
+			intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
+			startActivity( intent );
+		} );
+
 		cmdArgs.setText( mPref.getString( "argv", getString( R.string.default_commandline_arguments ) ) );
+		GamePath.setText( mPref.getString( "gamepath", getDefaultDir() + "/srceng" ) );
+
+		// permissions check
+		applyPermissions( new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO }, REQUEST_PERMISSIONS );
 
 		boolean isCommitEmpty = getResources().getString( R.string.current_commit ).isEmpty();
 		boolean isURLEmpty = getResources().getString( R.string.update_url ).isEmpty();
@@ -117,8 +177,10 @@ public class LauncherActivity extends Activity
 	public void saveSettings( SharedPreferences.Editor editor )
 	{
 		String argv = prepareArgv( cmdArgs.getText().toString() );
+		String gamepath = GamePath.getText().toString();
 
 		editor.putString( "argv", argv );
+		editor.putString( "gamepath", gamepath );
 		editor.commit();
 	}
 
@@ -154,33 +216,20 @@ public class LauncherActivity extends Activity
 		if( argv.contains( "-game" ) )
 		{
 			new AlertDialog.Builder( this )
-				.setTitle( R.string.srceng_launcher_error )
-				.setMessage( R.string.tf2classic_game_check )
-				.setPositiveButton( R.string.srceng_launcher_ok, null )
-				.show();
+					.setTitle( R.string.srceng_launcher_error )
+					.setMessage( R.string.tf2classic_game_check )
+					.setPositiveButton( R.string.srceng_launcher_ok, null )
+					.show();
 
 			return;
 		}
 
-		ExtractAssets.extractAssets( this );
+		saveSettings( editor );
 
-		try
-		{
-			Intent intent = new Intent();
-			intent.setComponent( new ComponentName( "com.valvesoftware.source", "org.libsdl.app.SDLActivity" ) );
-			intent = prepareIntent( intent );
-			startActivity( intent );
-			return;
-		}
-		catch( Exception ignored )
-		{
-		}
-
-		new AlertDialog.Builder( this )
-			.setTitle( R.string.srceng_launcher_error )
-			.setMessage( R.string.source_engine_fatal )
-			.setPositiveButton( R.string.srceng_launcher_ok, null )
-			.show();
+		Intent intent = new Intent( LauncherActivity.this, SDLActivity.class );
+		intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
+		intent = prepareIntent( intent );
+		startActivity( intent );
 	}
 
 	public void onPause()

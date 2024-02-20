@@ -54,11 +54,11 @@ public class UpdateService extends Service
 		Intent browserIntent = new Intent( Intent.ACTION_VIEW, Uri.parse( extras.get( "url" ).toString() ) );
 
 		notif.contentIntent = PendingIntent.getActivity( this, 0, browserIntent, PendingIntent.FLAG_IMMUTABLE );
-		notif.flags				|= Notification.FLAG_AUTO_CANCEL;
-		notif.defaults				|= Notification.DEFAULT_LIGHTS;			// LED
-		notif.defaults				|= Notification.DEFAULT_VIBRATE;		// Vibration
-		notif.defaults				|= Notification.DEFAULT_SOUND;			// Sound
-		notif.priority				|= Notification.PRIORITY_HIGH;
+		notif.flags |= Notification.FLAG_AUTO_CANCEL;
+		notif.defaults |= Notification.DEFAULT_LIGHTS; // LED
+		notif.defaults |= Notification.DEFAULT_VIBRATE; // Vibration
+		notif.defaults |= Notification.DEFAULT_SOUND; // Sound
+		notif.priority |= Notification.PRIORITY_HIGH;
 
 		nm.notify( 1, notif );
 	}

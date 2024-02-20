@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="srceng_launcher_command_args">Command-line arguments</string>
+	<string name="srceng_launcher_game_path">Path to game resources</string>
 
 	<string name="srceng_launcher_about_title">About</string>
 	<!-- <string name="srceng_launcher_about_text">Thanks to nillerusr and jusic for port\nvalve for source engine\n\nNot for commercial use!\nContact Us: unknownandlost11@gmail.com\n\nDonate: https://boosty.to/nillerusr\nETH: 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin): bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero): 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string> -->
@@ -9,6 +10,13 @@
 	<string name="srceng_launcher_launch">Launch</string>
 	<string name="srceng_launcher_ok">OK</string>
 	<string name="srceng_launcher_error">Error</string>
+	<string name="srceng_launcher_set">SET</string>
+	<string name="srceng_dir_choice_btn">Set current directory</string>
+
+	<!-- GameDir selection -->
+	<string name="srceng_launcher_set_game_path">Set game directory</string>
+	<string name="srceng_launcher_error_no_permission">Without permissions game won\'t work</string>
+	<string name="srceng_launcher_error_find_gameinfo">Couldn\'t find game resources. Did you set the path correctly?</string>
 
 	<string name="new_update">Update available!</string>
 	<string name="source_engine_fatal">Please install Source Engine!</string>

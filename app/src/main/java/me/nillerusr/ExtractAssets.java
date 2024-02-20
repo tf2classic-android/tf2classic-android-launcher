@@ -102,6 +102,13 @@ public class ExtractAssets
 		chmod( context.getFilesDir().getPath(), 0777 );
 
 		extractVPK( context );
+		extractAsset( context, "DroidSansFallback.ttf", false );
+		extractAsset( context, "LiberationMono-Regular.ttf", false );
+		extractAsset( context, "dejavusans-boldoblique.ttf", false );
+		extractAsset( context, "dejavusans-bold.ttf", false );
+		extractAsset( context, "dejavusans-oblique.ttf", false );
+		extractAsset( context, "dejavusans.ttf", false );
+		extractAsset( context, "Itim-Regular.otf", false );
 	}
 
 	public static void extractVPK( Context context )
