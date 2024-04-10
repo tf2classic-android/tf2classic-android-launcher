@@ -7,6 +7,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.util.Linkify;
@@ -18,6 +19,8 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.valvesoftware.ValveActivity2;
 
 import su.xash.fwgslib.CertCheck;
 import org.libsdl.app.SDLActivity;
@@ -106,6 +109,12 @@ public class LauncherActivity extends Activity
 		return newargv;
 	}
 
+	private void startBrowser( String url )
+	{
+		Intent browserIntent = new Intent( Intent.ACTION_VIEW, Uri.parse( url ) );
+		startActivity( browserIntent );
+	}
+
 	public void onCreate( Bundle savedInstanceState )
 	{
 		super.onCreate( savedInstanceState );
@@ -156,6 +165,18 @@ public class LauncherActivity extends Activity
 			Intent intent = new Intent( LauncherActivity.this, DirchActivity.class );
 			intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
 			startActivity( intent );
+		} );
+
+		Button getHL2Button = findViewById( R.id.get_hl2 );
+		getHL2Button.setOnClickListener( v ->
+		{
+			startBrowser( "https://store.steampowered.com/app/220" );
+		} );
+
+		Button getTF2CButton = findViewById( R.id.get_tf2c );
+		getTF2CButton.setOnClickListener( v ->
+		{
+			startBrowser( "https://drive.google.com/file/d/1mcKauuhdlX-MqmrlOSu8t8g0xH3H0XqE/view" );
 		} );
 
 		cmdArgs.setText( mPref.getString( "argv", getString( R.string.default_commandline_arguments ) ) );
