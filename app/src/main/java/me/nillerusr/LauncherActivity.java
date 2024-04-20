@@ -214,7 +214,7 @@ public class LauncherActivity extends Activity
 		} );
 
 		cmdArgs.setText( mPref.getString( "argv", getString( R.string.default_commandline_arguments ) ) );
-		GamePath.setText( mPref.getString( "gamepath", getDefaultDir() + "/srceng" ) );
+		GamePath.setText( mPref.getString( "gamepath", getDefaultDir() + "/srceng_tf2classic" ) );
 
 		// permissions check
 		applyPermissions( new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO }, REQUEST_PERMISSIONS );

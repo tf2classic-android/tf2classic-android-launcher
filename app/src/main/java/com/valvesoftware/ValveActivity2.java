@@ -66,7 +66,7 @@ public class ValveActivity2 // not activity, i am lazy to change native methods
 	static public boolean preInit( Context context, Intent intent )
 	{
 		mPref = context.getSharedPreferences( "mod", 0 );
-		String gamepath = mPref.getString( "gamepath", LauncherActivity.getDefaultDir() + "/srceng" );
+		String gamepath = mPref.getString( "gamepath", LauncherActivity.getDefaultDir() + "/srceng_tf2classic" );
 		String gamedir = intent.getStringExtra( "gamedir" );
 		if( gamedir == null || gamedir.isEmpty() )
 			gamedir = LauncherActivity.MOD_NAME;
@@ -81,7 +81,7 @@ public class ValveActivity2 // not activity, i am lazy to change native methods
 	{
 		mPref = context.getSharedPreferences( "mod", 0 );
 		ApplicationInfo appinf = context.getApplicationInfo();
-		String gamepath = mPref.getString( "gamepath", LauncherActivity.getDefaultDir() + "/srceng" );
+		String gamepath = mPref.getString( "gamepath", LauncherActivity.getDefaultDir() + "/srceng_tf2classic" );
 
 		String argv = intent.getStringExtra( "argv" );
 		String gamedir = intent.getStringExtra( "gamedir" );
