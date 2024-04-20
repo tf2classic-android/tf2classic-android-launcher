@@ -170,13 +170,13 @@ public class LauncherActivity extends Activity
 		Button getHL2Button = findViewById( R.id.get_hl2 );
 		getHL2Button.setOnClickListener( v ->
 		{
-			startBrowser( "https://store.steampowered.com/app/220" );
+			startBrowser( "https://store.steampowered.com/app/220" ); // Half-Life 2 store page
 		} );
 
 		Button getTF2CButton = findViewById( R.id.get_tf2c );
 		getTF2CButton.setOnClickListener( v ->
 		{
-			startBrowser( "https://drive.google.com/file/d/1mcKauuhdlX-MqmrlOSu8t8g0xH3H0XqE/view" );
+			startBrowser( getString( R.string.tf2c_download_url ) );
 		} );
 
 		cmdArgs.setText( mPref.getString( "argv", getString( R.string.default_commandline_arguments ) ) );
