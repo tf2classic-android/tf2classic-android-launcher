@@ -23,4 +23,5 @@
 	<string name="new_update">Доступно обновление!</string>
 	<string name="source_engine_fatal">Пожалуйста, установите Source Engine!</string>
 	<string name="tf2classic_game_check">Пожалуйста, удалите \"-game\" из аргументов командной строки.</string>
+	<string name="tf2classic_bad_device">Ваше устройство не подходит для этой игры.\nВы НЕ можете запустить TF2C.</string>
 </resources>

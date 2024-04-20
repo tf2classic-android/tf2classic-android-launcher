@@ -2,6 +2,7 @@ package me.nillerusr;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
@@ -115,6 +116,26 @@ public class LauncherActivity extends Activity
 		startActivity( browserIntent );
 	}
 
+	private boolean IsDeviceBrick()
+	{
+		ActivityManager actManager = ( ActivityManager )getSystemService( ACTIVITY_SERVICE );
+		assert actManager != null;
+
+		ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
+		actManager.getMemoryInfo( memInfo );
+
+		double dTotalMemory = (double)(memInfo.totalMem / (1024*1024*1024));
+
+		Log.d( TAG, "totalMemory: " + dTotalMemory );
+
+		if( dTotalMemory < 3.d ) // 3GB
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 	public void onCreate( Bundle savedInstanceState )
 	{
 		super.onCreate( savedInstanceState );
@@ -139,7 +160,20 @@ public class LauncherActivity extends Activity
 		GamePath = findViewById( R.id.edit_gamepath );
 
 		Button button = findViewById( R.id.button_launch );
-		button.setOnClickListener( LauncherActivity.this::startSource );
+		if( IsDeviceBrick() )
+		{
+			button.setEnabled( false );
+
+			new AlertDialog.Builder( this )
+				.setTitle( R.string.srceng_launcher_error )
+				.setMessage( R.string.tf2classic_bad_device )
+				.setPositiveButton( R.string.srceng_launcher_ok, null )
+				.show();
+		}
+		else
+		{
+			button.setOnClickListener( LauncherActivity.this::startSource );
+		}
 
 		Button aboutButton = findViewById( R.id.button_about );
 		aboutButton.setOnClickListener( v ->

@@ -23,4 +23,5 @@
 	<string name="new_update">Mise à jour disponible !</string>
 	<string name="source_engine_fatal">Veuillez installer Source Engine !</string>
 	<string name="tf2classic_game_check">Veuillez supprimer \"-game\" des arguments de la ligne de commande.</string>
+	<string name="tf2classic_bad_device">Sorry, your device is too bad for this game.\nYou can\'t run TF2C.</string> <!-- TRANSLATE -->
 </resources>
