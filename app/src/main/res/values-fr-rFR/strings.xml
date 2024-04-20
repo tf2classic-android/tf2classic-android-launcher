@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="srceng_launcher_command_args">Arguments de la ligne de commande</string>
-	<string name="srceng_launcher_game_path">Path to game resources</string> <!-- TRANSLATE -->
+	<string name="srceng_launcher_game_path">Chemin d\'accès aux ressources du jeu</string>
 
 	<string name="srceng_launcher_about_title">À propos</string>
 	<!-- <string name="srceng_launcher_about_text">Merci à Nillerusr et Jusic pour le portage\nValve pour Source (moteur de jeu)\n\nPas d\'utilisation commerciale !\nContactez-nous : unknownandlost11@gmail.com\n\nFaire un don : https://boosty.to/nillerusr\nETH(Ethereum) : 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin) : bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero) : 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string> -->
-	<string name="srceng_launcher_about_text">Merci à Nillerusr et Jusic pour le portage\nValve pour Source (moteur de jeu)\n\ndanielmm8888 et l\'ancienne équipe de Team Fortress 2 Classic pour Team Fortress 2 Classic\nSanyaSho pour le portage de TF2C\ntyabus pour diverses corrections et améliorations\n\nbvvth556 (https://youtube.com/@bvvth556gaming), Unnamed (https://youtube.com/@twilightbob), Anes pour une nouvelle configuration tactile\n\nPas d\'utilisation commerciale !\nContactez-nous : unknownandlost11@gmail.com\n\nDiscord : https://discord.gg/gXPQknA5Ed\nFaire un don : https://boosty.to/nillerusr\nETH(Ethereum) : 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin) : bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero) : 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string>
+	<string name="srceng_launcher_about_text">Merci à Nillerusr et Jusic pour le portage\nValve pour Source (moteur de jeu)\n\ndanielmm8888 et l\'ancienne équipe de Team Fortress 2 Classic pour Team Fortress 2 Classic\nSanyaSho pour le portage de TF2C\ntyabus pour diverses corrections et améliorations\n\nbvvth556 (https://youtube.com/@bvvth556gaming), Unnamed (https://youtube.com/@twilightbob), Anes pour une nouvelle configuration tactile.\n\nPas d\'utilisation commerciale !\nContactez-nous : unknownandlost11@gmail.com\n\nDiscord : https://discord.gg/gXPQknA5Ed\nFaire un don : https://boosty.to/nillerusr\nETH(Ethereum) : 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin) : bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero) : 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string>
 
 	<string name="srceng_get_hl2">Obtenir Half-Life 2</string>
 	<string name="srceng_get_tf2c">Obtenir TF2C</string>
 	<string name="srceng_launcher_launch">Lancer</string>
 	<string name="srceng_launcher_ok">OK</string>
 	<string name="srceng_launcher_error">Erreur</string>
-	<string name="srceng_launcher_set">SET</string> <!-- TRANSLATE -->
-	<string name="srceng_dir_choice_btn">Set current directory</string> <!-- TRANSLATE -->
+	<string name="srceng_launcher_set">DÉFINIR</string>
+	<string name="srceng_dir_choice_btn">Définir le répertoire actuel</string>
 
 	<!-- GameDir selection -->
-	<string name="srceng_launcher_set_game_path">Set game directory</string> <!-- TRANSLATE -->
-	<string name="srceng_launcher_error_no_permission">Without permissions game won\'t work</string> <!-- TRANSLATE -->
-	<string name="srceng_launcher_error_find_gameinfo">Couldn\'t find game resources. Did you set the path correctly?</string> <!-- TRANSLATE -->
+	<string name="srceng_launcher_set_game_path">Définir le répertoire du jeu</string>
+	<string name="srceng_launcher_error_no_permission">Sans autorisations, le jeu ne fonctionne pas.</string>
+	<string name="srceng_launcher_error_find_gameinfo">Impossible de trouver les ressources du jeu. Avez-vous défini le chemin d\'accès correctement ?</string>
 
 	<string name="new_update">Mise à jour disponible !</string>
 	<string name="source_engine_fatal">Veuillez installer Source Engine !</string>
 	<string name="tf2classic_game_check">Veuillez supprimer \"-game\" des arguments de la ligne de commande.</string>
-	<string name="tf2classic_bad_device">Sorry, your device is too bad for this game.\nYou can\'t run TF2C.</string> <!-- TRANSLATE -->
+	<string name="tf2classic_bad_device">Désolé, votre appareil est trop lent pour ce jeu.\nTu ne peux pas jouer TF2C.</string>
 </resources>
