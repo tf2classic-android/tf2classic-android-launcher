@@ -104,7 +104,7 @@ public class DirchActivity extends Activity implements OnTouchListener
 		mPref = getSharedPreferences( "mod", 0 );
 		requestWindowFeature( 1 );
 
-		super.setTheme( 16973829 );
+		super.setTheme( 0x01030224 );
 
 		setContentView( R.layout.activity_directory_choice );
 		cur_dir = null;
