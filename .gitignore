@@ -18,3 +18,5 @@ Thumbs.db
 
 /app/src/main/assets/extras_dir.vpk
 android-sdk
+
+*.so
