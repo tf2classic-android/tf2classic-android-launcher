@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="vpk_name" translatable="false">extras_dir.vpk</string>
+	<string name="vpk_checksum" translatable="false">GET_VPK_CHECKSUM_AND_REPLACE_ME</string>
+</resources>

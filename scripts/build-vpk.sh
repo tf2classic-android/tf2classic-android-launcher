@@ -16,4 +16,4 @@ export VPKSHA=$(sha1sum ../app/src/main/assets/extras_dir.vpk | cut -d ' ' -f 1)
 echo "VPK sha1sum =" $VPKSHA
 
 # aftomathicc
-sed -i "s|VPK_CHSM.*=.*\".*\"|VPK_CHSM = \"$VPKSHA\"|" ../app/src/main/java/me/nillerusr/ExtractAssets.java
+sed -i "s|GET_VPK_CHECKSUM_AND_REPLACE_ME|$VPKSHA|" ../app/src/main/res/values/vpk.xml

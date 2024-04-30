@@ -11,13 +11,12 @@ import android.content.pm.ApplicationInfo;
 import android.content.res.AssetManager;
 import android.util.Log;
 
+import me.sanyasho.tf2classic.R;
+
 public class ExtractAssets
 {
 	public static String TAG = "ExtractAssets";
 	static SharedPreferences mPref;
-
-	public static final String VPK_NAME = "extras_dir.vpk";
-	public static final String VPK_CHSM = "";
 
 	private static int chmod( String path, int mode )
 	{
@@ -115,6 +114,9 @@ public class ExtractAssets
 	{
 		if( mPref == null )
 			mPref = context.getSharedPreferences( "mod", 0 );
+
+		final String VPK_NAME = context.getString( R.string.vpk_name );
+		final String VPK_CHSM = context.getString( R.string.vpk_checksum );
 
 		Boolean force = !VPK_CHSM.equals( mPref.getString( "vpk_checksum", "" ) );
 		extractAsset( context, VPK_NAME, force );

@@ -26,6 +26,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
 import me.sanyasho.tf2classic.R;
 import su.xash.fwgslib.CertCheck;
 
@@ -41,13 +43,13 @@ public class LauncherActivity extends Activity
 
 	final static int REQUEST_PERMISSIONS = 42;
 
-	public void applyPermissions( final String permissions[], final int code )
+	public void applyPermissions( final String[] permissions, final int code )
 	{
-		List< String > requestPermissions = new ArrayList< String >();
-		for( int i = 0; i < permissions.length; i++ )
+		List< String > requestPermissions = new ArrayList<>();
+		for( String permission : permissions )
 		{
-			if( checkSelfPermission( permissions[ i ] ) != PackageManager.PERMISSION_GRANTED )
-				requestPermissions.add( permissions[ i ] );
+			if( checkSelfPermission( permission ) != PackageManager.PERMISSION_GRANTED )
+				requestPermissions.add( permission );
 		}
 
 		if( !requestPermissions.isEmpty() )
@@ -59,7 +61,7 @@ public class LauncherActivity extends Activity
 		}
 	}
 
-	public void onRequestPermissionsResult( int requestCode, String[] permissions, int[] grantResults )
+	public void onRequestPermissionsResult( int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults )
 	{
 		if( requestCode == REQUEST_PERMISSIONS )
 		{
