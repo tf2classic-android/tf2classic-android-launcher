@@ -188,7 +188,7 @@ public class LauncherActivity extends Activity
 		Button getHL2Button = findViewById( R.id.get_hl2 );
 		getHL2Button.setOnClickListener( v ->
 		{
-			startBrowser( "https://store.steampowered.com/app/220" ); // Half-Life 2 store page
+			startBrowser( "https://store.steampowered.com/app/320" ); // Half-Life 2: Deathmatch store page
 		} );
 
 		Button getTF2CButton = findViewById( R.id.get_tf2c );
