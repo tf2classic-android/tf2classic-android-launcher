@@ -18,10 +18,9 @@ import me.sanyasho.tf2classic.R;
 public class UpdateSystem extends AsyncTask< String, Integer, String >
 {
 	public static String TAG = "UpdateSystem";
-
+	static String git_url, apk_url;
 	Context mContext;
 	String commit;
-	static String git_url, apk_url;
 
 	public UpdateSystem( Context context )
 	{

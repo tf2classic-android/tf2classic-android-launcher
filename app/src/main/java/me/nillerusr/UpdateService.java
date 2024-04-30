@@ -15,10 +15,9 @@ import me.sanyasho.tf2classic.R;
 public class UpdateService extends Service
 {
 	public static String TAG = "UpdateService";
-
+	static boolean service_work = false;
 	NotificationManager nm;
 	Bundle extras;
-	static boolean service_work = false;
 
 	@Override
 	public void onCreate()

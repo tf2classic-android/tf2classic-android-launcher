@@ -8,14 +8,11 @@ import org.libsdl.app.SDLActivity;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.method.LinkMovementMethod;
@@ -30,6 +27,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import me.sanyasho.tf2classic.R;
+import me.sanyasho.util.SharedUtil;
 import su.xash.fwgslib.CertCheck;
 
 public class LauncherActivity extends Activity
@@ -82,70 +80,6 @@ public class LauncherActivity extends Activity
 		return dir.getPath();
 	}
 
-	public static String prepareArgv( String oldargv )
-	{
-		boolean bHasForceVendorID = oldargv.contains( "-force_vendor_id" );
-		boolean bHasForceDeviceID = oldargv.contains( "-force_device_id" );
-
-		StringBuilder sb = new StringBuilder();
-
-		// SanyaSho: force this args to command line
-		if( !bHasForceVendorID )
-		{
-			Log.d( TAG, "force_vendor_id argv is missing, appending." );
-			sb.append( "-force_vendor_id 0x10DE" ).append( " " );
-		}
-		if( !bHasForceDeviceID )
-		{
-			Log.d( TAG, "force_device_id argv is missing, appending." );
-			sb.append( "-force_device_id 0x1180" ).append( " " );
-		}
-
-		String[] oldargvarr = oldargv.split( " " );
-		for( String str : oldargvarr )
-			sb.append( str ).append( " " );
-
-		String newargv = sb.toString();
-		Log.d( TAG, String.format( "prepareArgv( %s ): %s", oldargv, newargv ) );
-		return newargv;
-	}
-
-	private void startBrowser( String url )
-	{
-		Intent browserIntent = new Intent( Intent.ACTION_VIEW, Uri.parse( url ) );
-		startActivity( browserIntent );
-	}
-
-	private boolean IsDeviceBrick()
-	{
-		ActivityManager actManager = ( ActivityManager ) getSystemService( ACTIVITY_SERVICE );
-		assert actManager != null;
-
-		ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-		actManager.getMemoryInfo( memInfo );
-
-		double dTotalMemory = ( double ) ( memInfo.totalMem / ( 1024 * 1024 * 1024 ) );
-
-		Log.d( TAG, "totalMemory: " + dTotalMemory );
-
-		if( dTotalMemory <= 2.7d ) // +-3GB
-		{
-			return true;
-		}
-
-		return false;
-	}
-
-	private boolean IsDeviceTooOld()
-	{
-		if( Build.VERSION.SDK_INT < Build.VERSION_CODES.O ) // Minimal is Android 8.0
-		{
-			return true;
-		}
-
-		return false;
-	}
-
 	public void onCreate( Bundle savedInstanceState )
 	{
 		super.onCreate( savedInstanceState );
@@ -170,7 +104,7 @@ public class LauncherActivity extends Activity
 		GamePath = findViewById( R.id.edit_gamepath );
 
 		Button button = findViewById( R.id.button_launch );
-		if( !CertCheck.IsDebugBuild() && (IsDeviceBrick() || IsDeviceTooOld()) )
+		if( !CertCheck.IsDebugBuild() && ( SharedUtil.IsDeviceBrick( getApplicationContext() ) || SharedUtil.IsDeviceTooOld( getApplicationContext() ) ) )
 		{
 			button.setEnabled( false );
 
@@ -205,13 +139,13 @@ public class LauncherActivity extends Activity
 		Button getHL2Button = findViewById( R.id.get_hl2 );
 		getHL2Button.setOnClickListener( v ->
 		{
-			startBrowser( "https://store.steampowered.com/app/320" ); // Half-Life 2: Deathmatch store page
+			SharedUtil.startBrowser( getApplicationContext(), "https://store.steampowered.com/app/320" ); // Half-Life 2: Deathmatch store page
 		} );
 
 		Button getTF2CButton = findViewById( R.id.get_tf2c );
 		getTF2CButton.setOnClickListener( v ->
 		{
-			startBrowser( getString( R.string.tf2c_download_url ) );
+			SharedUtil.startBrowser( getApplicationContext(), getString( R.string.tf2c_download_url ) );
 		} );
 
 		cmdArgs.setText( mPref.getString( "argv", getString( R.string.default_commandline_arguments ) ) );
@@ -251,7 +185,7 @@ public class LauncherActivity extends Activity
 
 	public void saveSettings( SharedPreferences.Editor editor )
 	{
-		String argv = prepareArgv( cmdArgs.getText().toString() );
+		String argv = SharedUtil.prepareArgv( cmdArgs.getText().toString() );
 		String gamepath = GamePath.getText().toString();
 
 		editor.putString( "argv", argv );
@@ -261,7 +195,7 @@ public class LauncherActivity extends Activity
 
 	private Intent prepareIntent( Intent i )
 	{
-		String argv = prepareArgv( cmdArgs.getText().toString() );
+		String argv = SharedUtil.prepareArgv( cmdArgs.getText().toString() );
 		i.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
 		saveSettings( mPref.edit() );
 
@@ -282,7 +216,7 @@ public class LauncherActivity extends Activity
 
 	public void startSource( View view )
 	{
-		String argv = prepareArgv( cmdArgs.getText().toString() );
+		String argv = SharedUtil.prepareArgv( cmdArgs.getText().toString() );
 		SharedPreferences.Editor editor = mPref.edit();
 		editor.putString( "argv", argv );
 
