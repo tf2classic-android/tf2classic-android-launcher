@@ -95,6 +95,7 @@
 						android:background="#FF313131"
 						android:orientation="vertical">
 
+						<!-- Command line args -->
 						<TextView
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
@@ -102,7 +103,6 @@
 							android:layout_marginRight="5dp"
 							android:text="@string/srceng_launcher_command_args"
 							android:textAppearance="?android:attr/textAppearanceMedium" />
-
 						<EditText
 							android:id="@+id/edit_cmdline"
 							android:layout_width="match_parent"
@@ -118,24 +118,28 @@
 							android:autofillHints=""
 							tools:ignore="LabelFor" />
 
+						<!-- Game resources -->
 						<TextView
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content" 
 							android:layout_marginLeft="5dp"
+							android:layout_marginRight="5dp"
 							android:text="@string/srceng_launcher_game_path"
 							android:textAppearance="?android:attr/textAppearanceMedium"/>
 						<EditText
 							android:id="@+id/edit_gamepath"
 							android:layout_width="match_parent"
 							android:layout_height="wrap_content"
-							android:maxLines="1"
-							android:inputType="text"
-							android:text="@string/default_gamedir"
 							android:layout_marginLeft="3dp"
 							android:layout_marginRight="3dp"
 							android:layout_marginTop="5dp"
 							android:layout_marginBottom="5dp"
-							android:backgroundTint="@color/hl_color"/>
+							android:backgroundTint="@color/hl_color"
+							android:inputType="text"
+							android:maxLines="1"
+							android:text="@string/default_gamedir"
+							android:autofillHints=""
+							tools:ignore="LabelFor" />
 						<Button
 							android:id="@+id/button_gamedir"
 							android:layout_width="match_parent"
@@ -146,6 +150,18 @@
 							android:layout_marginTop="5dp"
 							android:layout_marginBottom="5dp"
 							android:textColor="#FFFFFF"/>
+
+						<TextView
+							android:id="@+id/internal_debug_build_warning"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center_horizontal"
+							android:layout_marginLeft="7dp"
+							android:layout_marginRight="7dp"
+							android:visibility="gone"
+							android:text="@string/internal_debug_build_warning"
+							android:textAppearance="?android:attr/textAppearanceMedium"/>
+
 						<LinearLayout
 							android:id="@+id/get_games_footer"
 							android:layout_width="match_parent"
@@ -161,7 +177,6 @@
 								android:layout_weight="1"
 								android:text="@string/srceng_get_hl2"
 								android:textColor="#FFFFFF" />
-
 							<Button
 								android:id="@+id/get_tf2c"
 								android:layout_width="match_parent"

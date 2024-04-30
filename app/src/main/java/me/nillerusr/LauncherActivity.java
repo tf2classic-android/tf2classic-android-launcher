@@ -150,7 +150,7 @@ public class LauncherActivity extends Activity
 	{
 		super.onCreate( savedInstanceState );
 		PKG_NAME = getApplication().getPackageName();
-		requestWindowFeature( 1 );
+		requestWindowFeature( Window.FEATURE_NO_TITLE );
 
 		super.setTheme( 0x01030224 );
 
@@ -170,7 +170,7 @@ public class LauncherActivity extends Activity
 		GamePath = findViewById( R.id.edit_gamepath );
 
 		Button button = findViewById( R.id.button_launch );
-		if( IsDeviceBrick() || IsDeviceTooOld() )
+		if( !CertCheck.IsDebugBuild() && (IsDeviceBrick() || IsDeviceTooOld()) )
 		{
 			button.setEnabled( false );
 
@@ -183,6 +183,12 @@ public class LauncherActivity extends Activity
 		else
 		{
 			button.setOnClickListener( LauncherActivity.this::startSource );
+		}
+
+		if( CertCheck.IsDebugBuild() )
+		{
+			TextView debugWarning = findViewById( R.id.internal_debug_build_warning );
+			debugWarning.setVisibility( View.VISIBLE );
 		}
 
 		Button aboutButton = findViewById( R.id.button_about );

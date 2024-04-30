@@ -11,4 +11,8 @@
 	<string name="default_gamedir" translatable="false">/sdcard/srceng_tf2classic</string>
 	<string name="launcher_icon_description" translatable="false">Team Fortress 2 Classic Logo</string>
 	<string name="tf2classic_version" translatable="false">2.0.0b4+</string>
+
+	<string name="internal_debug_build_warning" translatable="false">
+		<font color="#ff0000"><b>WARNING!</b> This is a <i>debug</i> build.</font>
+	</string>
 </resources>

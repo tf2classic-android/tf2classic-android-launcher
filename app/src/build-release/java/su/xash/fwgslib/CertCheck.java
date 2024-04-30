@@ -1,18 +1,27 @@
 package su.xash.fwgslib;
 
-import android.content.*;
-import android.util.*;
-import android.content.pm.*;
+// Release CertCheck.java
+
+import java.security.MessageDigest;
+
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
+import android.util.Base64;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
-
-import java.lang.*;
-import java.security.MessageDigest;
 
 public class CertCheck
 {
 	private static String TAG = "CertCheck";
 	private static String APK_KEY = "";
+
+	public static boolean IsDebugBuild()
+	{
+		return false;
+	}
 
 	public static String getApkKey()
 	{

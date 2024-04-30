@@ -30,6 +30,15 @@ android {
 		archivesBaseName "tf2classic"
 	}
 
+	sourceSets {
+		debug {
+			java.srcDirs = [ 'src/main/java', 'src/build-debug/java' ]
+		}
+		release {
+			java.srcDirs = [ 'src/main/java', 'src/build-release/java' ]
+		}
+	}
+
 	buildTypes {
 		debug {
 			minifyEnabled false
