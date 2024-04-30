@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.Locale;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,9 +12,7 @@ import android.util.Log;
 
 import me.nillerusr.ExtractAssets;
 import me.nillerusr.LauncherActivity;
-
 import me.sanyasho.tf2classic.R;
-import su.xash.fwgslib.CertCheck;
 
 public class ValveActivity2 // not activity, i am lazy to change native methods
 {

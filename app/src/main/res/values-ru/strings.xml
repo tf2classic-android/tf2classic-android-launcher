@@ -5,7 +5,7 @@
 
 	<string name="srceng_launcher_about_title">О порте</string>
 	<!-- <string name="srceng_launcher_about_text">Особая благодарность:\nnillerusr, Jusic за порт\nvalve за source engine\n\nНе для коммерческого использования!\nКонтакты: unknownandlost11@gmail.com\n\nДонат: https://boosty.to/nillerusr\nETH: 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin): bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero): 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string> -->
-	<string name="srceng_launcher_about_text">Особая благодарность:\nnillerusr, Jusic за порт\nvalve за source engine\n\ndanielmm8888 и старая команда Team Fortress 2 Classic за Team Fortress 2 Classic\nSanyaSho за порт TF2C\ntyabus за различные улучшения и исправления\n\nbvvth556 (https://youtube.com/@bvvth556gaming), Unnamed (https://youtube.com/@twilightbob), Anes за новый конфиг управления\n\nНе для коммерческого использования!\nКонтакты: unknownandlost11@gmail.com\n\nDiscord: https://discord.gg/gXPQknA5Ed\nДонат: https://boosty.to/nillerusr\nETH: 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin): bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero): 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string>
+	<!-- <string name="srceng_launcher_about_text">Особая благодарность:\nnillerusr, Jusic за порт\nvalve за source engine\n\ndanielmm8888 и старая команда Team Fortress 2 Classic за Team Fortress 2 Classic\nSanyaSho за порт TF2C\ntyabus за различные улучшения и исправления\n\nbvvth556 (https://youtube.com/@bvvth556gaming), Unnamed (https://youtube.com/@twilightbob), Anes за новый конфиг управления\n\nНе для коммерческого использования!\nКонтакты: unknownandlost11@gmail.com\n\nDiscord: https://discord.gg/gXPQknA5Ed\nДонат: https://boosty.to/nillerusr\nETH: 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin): bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero): 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string> -->
 
 	<string name="srceng_get_hl2">Получить\nHalf-Life 2</string>
 	<string name="srceng_get_tf2c">Скачать\nTF2C</string>
@@ -21,7 +21,25 @@
 	<string name="srceng_launcher_error_find_gameinfo">Не удалось обнаружить игровые ресурсы. Проверьте указанный путь к игре!</string>
 
 	<string name="new_update">Доступно обновление!</string>
-	<string name="source_engine_fatal">Пожалуйста, установите Source Engine!</string>
 	<string name="tf2classic_game_check">Пожалуйста, удалите \"-game\" из аргументов командной строки.</string>
 	<string name="tf2classic_bad_device">Ваше устройство не подходит для этой игры.\nВы НЕ можете запустить TF2C.</string>
+
+	<!-- New About dialog stuff -->
+	<string name="about_authors">
+		Порт Source Engine сделан:\n
+		• nillerusr\n
+		• jusic\n
+		TF2C сделан:\n
+		• danielmm8888\n
+		• Старая команда TF2C\n
+		Порт TF2C сделан:\n
+		• SanyaSho\n
+		• tyabus\n
+		Особая благодарность:\n
+		• <a href="https://youtube.com/@bvvth556gaming">bvvth556</a>, <a href="https://youtube.com/@twilightbob">Unnamed</a> и Anes за новый конфиг управления
+	</string>
+	<string name="about_copyright">
+		Не для коммерческого использования.\n
+		All rights reserved. Valve, the Valve logo, Team Fortress, the Team Fortress logo are trademarks and/or registered trademarks of Valve Corporation.
+	</string>
 </resources>

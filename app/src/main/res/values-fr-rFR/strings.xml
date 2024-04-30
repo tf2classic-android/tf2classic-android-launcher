@@ -5,7 +5,7 @@
 
 	<string name="srceng_launcher_about_title">À propos</string>
 	<!-- <string name="srceng_launcher_about_text">Merci à Nillerusr et Jusic pour le portage\nValve pour Source (moteur de jeu)\n\nPas d\'utilisation commerciale !\nContactez-nous : unknownandlost11@gmail.com\n\nFaire un don : https://boosty.to/nillerusr\nETH(Ethereum) : 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin) : bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero) : 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string> -->
-	<string name="srceng_launcher_about_text">Merci à Nillerusr et Jusic pour le portage\nValve pour Source (moteur de jeu)\n\ndanielmm8888 et l\'ancienne équipe de Team Fortress 2 Classic pour Team Fortress 2 Classic\nSanyaSho pour le portage de TF2C\ntyabus pour diverses corrections et améliorations\n\nbvvth556 (https://youtube.com/@bvvth556gaming), Unnamed (https://youtube.com/@twilightbob), Anes pour une nouvelle configuration tactile.\n\nPas d\'utilisation commerciale !\nContactez-nous : unknownandlost11@gmail.com\n\nDiscord : https://discord.gg/gXPQknA5Ed\nFaire un don : https://boosty.to/nillerusr\nETH(Ethereum) : 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin) : bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero) : 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string>
+	<!-- <string name="srceng_launcher_about_text">Merci à Nillerusr et Jusic pour le portage\nValve pour Source (moteur de jeu)\n\ndanielmm8888 et l\'ancienne équipe de Team Fortress 2 Classic pour Team Fortress 2 Classic\nSanyaSho pour le portage de TF2C\ntyabus pour diverses corrections et améliorations\n\nbvvth556 (https://youtube.com/@bvvth556gaming), Unnamed (https://youtube.com/@twilightbob), Anes pour une nouvelle configuration tactile.\n\nPas d\'utilisation commerciale !\nContactez-nous : unknownandlost11@gmail.com\n\nDiscord : https://discord.gg/gXPQknA5Ed\nFaire un don : https://boosty.to/nillerusr\nETH(Ethereum) : 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin) : bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero) : 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string> -->
 
 	<string name="srceng_get_hl2">Obtenir Half-Life 2</string>
 	<string name="srceng_get_tf2c">Obtenir TF2C</string>
@@ -21,7 +21,25 @@
 	<string name="srceng_launcher_error_find_gameinfo">Impossible de trouver les ressources du jeu. Avez-vous défini le chemin d\'accès correctement ?</string>
 
 	<string name="new_update">Mise à jour disponible !</string>
-	<string name="source_engine_fatal">Veuillez installer Source Engine !</string>
 	<string name="tf2classic_game_check">Veuillez supprimer \"-game\" des arguments de la ligne de commande.</string>
 	<string name="tf2classic_bad_device">Désolé, votre appareil est trop lent pour ce jeu.\nTu ne peux pas jouer TF2C.</string>
+
+	<!-- New About dialog stuff -->
+	<string name="about_authors"> <!-- TRANSLATE -->
+		Source Engine Android port made by:\n
+		• nillerusr\n
+		• jusic\n
+		TF2C made by:\n
+		• danielmm8888\n
+		• Old TF2C Team\n
+		TF2C Android port made by:\n
+		• SanyaSho\n
+		• tyabus\n
+		Special thanks to:\n
+		• <a href="https://youtube.com/@bvvth556gaming">bvvth556</a>, <a href="https://youtube.com/@twilightbob">Unnamed</a>, Anes pour une nouvelle configuration tactile.
+	</string>
+	<string name="about_copyright">
+		Pas d\'utilisation commerciale.\n
+		All rights reserved. Valve, the Valve logo, Team Fortress, the Team Fortress logo are trademarks and/or registered trademarks of Valve Corporation.
+	</string>
 </resources>

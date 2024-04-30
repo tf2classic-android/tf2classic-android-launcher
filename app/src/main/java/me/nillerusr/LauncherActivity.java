@@ -1,5 +1,11 @@
 package me.nillerusr;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.libsdl.app.SDLActivity;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
@@ -11,26 +17,17 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.text.util.Linkify;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.valvesoftware.ValveActivity2;
-
-import su.xash.fwgslib.CertCheck;
-import org.libsdl.app.SDLActivity;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 import me.sanyasho.tf2classic.R;
+import su.xash.fwgslib.CertCheck;
 
 public class LauncherActivity extends Activity
 {
@@ -118,13 +115,13 @@ public class LauncherActivity extends Activity
 
 	private boolean IsDeviceBrick()
 	{
-		ActivityManager actManager = ( ActivityManager )getSystemService( ACTIVITY_SERVICE );
+		ActivityManager actManager = ( ActivityManager ) getSystemService( ACTIVITY_SERVICE );
 		assert actManager != null;
 
 		ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
 		actManager.getMemoryInfo( memInfo );
 
-		double dTotalMemory = (double)(memInfo.totalMem / (1024*1024*1024));
+		double dTotalMemory = ( double ) ( memInfo.totalMem / ( 1024 * 1024 * 1024 ) );
 
 		Log.d( TAG, "totalMemory: " + dTotalMemory );
 
@@ -176,22 +173,7 @@ public class LauncherActivity extends Activity
 		}
 
 		Button aboutButton = findViewById( R.id.button_about );
-		aboutButton.setOnClickListener( v ->
-		{
-			Dialog dialog = new Dialog( LauncherActivity.this );
-			dialog.setTitle( R.string.srceng_launcher_about_title );
-			ScrollView scroll = new ScrollView( LauncherActivity.this );
-			scroll.setLayoutParams( new LayoutParams( LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT ) );
-			scroll.setPadding( 5, 5, 5, 5 );
-			TextView text = new TextView( LauncherActivity.this );
-			text.setText( R.string.srceng_launcher_about_text );
-			text.setLinksClickable( true );
-			text.setTextIsSelectable( true );
-			Linkify.addLinks( text, Linkify.WEB_URLS | Linkify.EMAIL_ADDRESSES );
-			scroll.addView( text );
-			dialog.setContentView( scroll );
-			dialog.show();
-		} );
+		aboutButton.setOnClickListener( this::aboutEngine );
 
 		Button dirButton = findViewById( R.id.button_gamedir );
 		dirButton.setOnClickListener( v ->
@@ -227,6 +209,25 @@ public class LauncherActivity extends Activity
 			UpdateSystem upd = new UpdateSystem( this );
 			upd.execute();
 		}
+	}
+
+	public void aboutEngine( View view )
+	{
+		final Activity a = this;
+		this.runOnUiThread( () ->
+		{
+			final Dialog dialog = new Dialog( a );
+			dialog.requestWindowFeature( Window.FEATURE_NO_TITLE ); // hide the dialog title
+			dialog.setContentView( R.layout.about );
+			dialog.setCancelable( true );
+			dialog.show();
+
+			TextView Links = dialog.findViewById( R.id.about_links );
+			Links.setMovementMethod( LinkMovementMethod.getInstance() );
+
+			dialog.findViewById( R.id.about_button_ok ).setOnClickListener( v -> dialog.cancel() );
+
+		} );
 	}
 
 	public void saveSettings( SharedPreferences.Editor editor )

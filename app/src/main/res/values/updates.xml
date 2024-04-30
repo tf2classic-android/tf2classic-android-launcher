@@ -10,4 +10,5 @@
 	<string name="default_commandline_arguments" translatable="false">-console -force_vendor_id 0x10DE -force_device_id 0x1140</string>
 	<string name="default_gamedir" translatable="false">/sdcard/srceng_tf2classic</string>
 	<string name="launcher_icon_description" translatable="false">Team Fortress 2 Classic Logo</string>
+	<string name="tf2classic_version" translatable="false">2.0.0b4+</string>
 </resources>
