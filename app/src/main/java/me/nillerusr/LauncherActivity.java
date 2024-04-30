@@ -15,6 +15,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.text.method.LinkMovementMethod;
@@ -127,7 +128,17 @@ public class LauncherActivity extends Activity
 
 		Log.d( TAG, "totalMemory: " + dTotalMemory );
 
-		if( dTotalMemory < 3.d ) // 3GB
+		if( dTotalMemory <= 2.7d ) // +-3GB
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+	private boolean IsDeviceTooOld()
+	{
+		if( Build.VERSION.SDK_INT < Build.VERSION_CODES.O ) // Minimal is Android 8.0
 		{
 			return true;
 		}
@@ -159,7 +170,7 @@ public class LauncherActivity extends Activity
 		GamePath = findViewById( R.id.edit_gamepath );
 
 		Button button = findViewById( R.id.button_launch );
-		if( IsDeviceBrick() )
+		if( IsDeviceBrick() || IsDeviceTooOld() )
 		{
 			button.setEnabled( false );
 
