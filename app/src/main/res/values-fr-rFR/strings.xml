@@ -26,20 +26,18 @@
 
 	<!-- New About dialog stuff -->
 	<string name="about_authors"> <!-- TRANSLATE -->
-		Source Engine Android port made by:\n
+		<b>Source Engine Android port made by:</b>\n
 		• nillerusr\n
 		• jusic\n
-		TF2C made by:\n
-		• danielmm8888\n
-		• Old TF2C Team\n
-		TF2C Android port made by:\n
+		<b>TF2C Android port made by:</b>\n
 		• SanyaSho\n
-		• tyabus\n
-		Special thanks to:\n
+		<b>Special thanks to:</b>\n
+		• danielmm8888 et l\'ancienne équipe de Team Fortress 2 Classic pour Team Fortress 2 Classic\n
+		• tyabus pour diverses corrections et améliorations\n
 		• <a href="https://youtube.com/@bvvth556gaming">bvvth556</a>, <a href="https://youtube.com/@twilightbob">Unnamed</a>, Anes pour une nouvelle configuration tactile.
 	</string>
 	<string name="about_copyright">
-		Pas d\'utilisation commerciale.\n
-		All rights reserved. Valve, the Valve logo, Team Fortress, the Team Fortress logo are trademarks and/or registered trademarks of Valve Corporation.
+		<b><u>Pas d\'utilisation commerciale.</u></b>\n
+		<i>All rights reserved. Valve, the Valve logo, Team Fortress, the Team Fortress logo are trademarks and/or registered trademarks of Valve Corporation.</i>
 	</string>
 </resources>
