@@ -95,7 +95,7 @@ public class ValveActivity2 // not activity, i am lazy to change native methods
 
 		ExtractAssets.extractAssets( context );
 
-		String vpks = context.getFilesDir().getPath() + "/" + ExtractAssets.VPK_NAME;
+		String vpks = context.getFilesDir().getPath() + "/" + context.getString( R.string.vpk_name );
 		if( customVPK != null && !customVPK.isEmpty() )
 			vpks = customVPK + "," + vpks;
 

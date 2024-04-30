@@ -259,8 +259,6 @@ public class LauncherActivity extends Activity
 			i.putExtra( "argv", argv );
 
 		i.putExtra( "gamedir", MOD_NAME );
-		i.putExtra( "gamelibdir", getApplicationInfo().nativeLibraryDir );
-		i.putExtra( "vpk", getFilesDir().getPath() + "/" + ExtractAssets.VPK_NAME );
 
 		return i;
 	}
