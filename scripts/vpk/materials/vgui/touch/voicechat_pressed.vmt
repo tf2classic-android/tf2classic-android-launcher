@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture"	"vgui/touch/scoreboard"
+	"$basetexture"	"vgui/touch/voicechat_pressed"
 	"$translucent" "1"
 	"$ignorez" "1"
 	"$vertexcolor" "1"
