@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "vgui/touch/spray"
+	"$basetexture" "vgui/touch/fastcalls/medic"
 	"$translucent" "1"
 	"$ignorez" "1"
 	"$vertexcolor" "1"

@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "vgui/touch/spray"
+	"$basetexture" "vgui/touch/engineer_pda/build/dispenser"
 	"$translucent" "1"
 	"$ignorez" "1"
 	"$vertexcolor" "1"
