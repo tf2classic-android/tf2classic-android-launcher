@@ -4,7 +4,8 @@
 	<string name="current_commit" translatable="false"></string>
 	<string name="update_url" translatable="false"></string>
 	<!-- <string name="tf2c_download_url" translatable="false">https\://drive.google.com/file/d/1mcKauuhdlX-MqmrlOSu8t8g0xH3H0XqE/view</string> -->
-	<string name="tf2c_download_url" translatable="false">https\://cloud.tyabus.co.uk/s/KGsMW9NxpNKyGrk</string>
+	<!-- <string name="tf2c_download_url" translatable="false">https\://cloud.tyabus.co.uk/s/KGsMW9NxpNKyGrk</string> -->
+	<string name="tf2c_download_url" translatable="false">https://cloud.tyabus.co.uk/s/3q4jsDPR6bAwgmf</string>
 
 	<!-- TODO(SanyaSho): 1.17 <string name="default_commandline_arguments" translatable="false">-nobackgroundlevel -force_vendor_id 0x10DE -force_device_id 0x1180</string> -->
 	<string name="default_commandline_arguments" translatable="false">-console -force_vendor_id 0x10DE -force_device_id 0x1140</string>
