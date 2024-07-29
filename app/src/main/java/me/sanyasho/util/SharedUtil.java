@@ -31,7 +31,7 @@ public class SharedUtil
 
 		Log.d( TAG, "totalMemory: " + dTotalMemory );
 
-		if( dTotalMemory < 2.7d ) // +-3GB
+		if( dTotalMemory < 2.0d ) // TF_MOD: 2 GB is minimal.
 		{
 			return true;
 		}

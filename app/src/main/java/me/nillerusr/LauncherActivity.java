@@ -26,7 +26,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import me.sanyasho.tf2classic.R;
+import me.sanyasho.tf_mod.R;
 import me.sanyasho.util.SharedUtil;
 import su.xash.fwgslib.CertCheck;
 
@@ -34,7 +34,7 @@ public class LauncherActivity extends Activity
 {
 	public static String TAG = "LauncherActivity";
 
-	public static String MOD_NAME = "tf2classic";
+	public static String MOD_NAME = "tf_port_with_bots";
 	public static String PKG_NAME;
 
 	static EditText cmdArgs = null, GamePath = null;
@@ -149,7 +149,7 @@ public class LauncherActivity extends Activity
 		} );
 
 		cmdArgs.setText( mPref.getString( "argv", getString( R.string.default_commandline_arguments ) ) );
-		GamePath.setText( mPref.getString( "gamepath", getDefaultDir() + "/srceng_tf2classic" ) );
+		GamePath.setText( mPref.getString( "gamepath", getDefaultDir() + "/srceng_tf_mod" ) );
 
 		// permissions check
 		applyPermissions( new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO }, REQUEST_PERMISSIONS );

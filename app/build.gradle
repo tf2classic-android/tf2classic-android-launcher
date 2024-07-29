@@ -11,7 +11,7 @@ android {
 		disable 'ExpiredTargetSdkVersion'
 	}
 
-	namespace 'me.sanyasho.tf2classic'
+	namespace 'me.sanyasho.tf_mod'
 	compileSdk 29
 
 	packagingOptions {
@@ -22,12 +22,12 @@ android {
 
 	defaultConfig {
 		applicationId "me.sanyasho"
-		applicationIdSuffix "tf2classic"
+		applicationIdSuffix "tf_mod"
 		minSdk 24
 		targetSdk 29
 		versionCode getBuildNum()
-		versionName "2.0.0b4+"
-		archivesBaseName "tf2classic"
+		versionName "1.0.1.8"
+		archivesBaseName "tf_mod"
 	}
 
 	sourceSets {

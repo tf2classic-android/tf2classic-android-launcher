@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import me.sanyasho.tf2classic.R;
+import me.sanyasho.tf_mod.R;
 
 public class DirchActivity extends Activity implements OnTouchListener
 {

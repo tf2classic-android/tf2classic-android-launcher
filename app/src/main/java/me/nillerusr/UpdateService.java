@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 
-import me.sanyasho.tf2classic.R;
+import me.sanyasho.tf_mod.R;
 
 public class UpdateService extends Service
 {

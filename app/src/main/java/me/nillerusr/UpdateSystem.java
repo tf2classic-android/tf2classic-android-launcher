@@ -13,7 +13,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import me.sanyasho.tf2classic.R;
+import me.sanyasho.tf_mod.R;
 
 public class UpdateSystem extends AsyncTask< String, Integer, String >
 {

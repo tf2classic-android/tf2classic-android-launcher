@@ -8,7 +8,7 @@
 	<!-- <string name="srceng_launcher_about_text">Thanks to nillerusr and jusic for port\nvalve for source engine\n\ndanielmm8888 and old Team Fortress 2 Classic team for Team Fortress 2 Classic\nSanyaSho for TF2C port\ntyabus for various fixes and improvements\n\nbvvth556 (https://youtube.com/@bvvth556gaming), Unnamed (https://youtube.com/@twilightbob), Anes for new touch config\n\nNot for commercial use!\nContact Us: unknownandlost11@gmail.com\n\nDiscord: https://discord.gg/gXPQknA5Ed\nDonate: https://boosty.to/nillerusr\nETH: 0x5d0D561146Ed758D266E59B56e85Af0b03ABAF46\nBTC(Bitcoin): bc1qnjq92jj9uqjtafcx2zvnwd48q89hgtd6w8a6na\nXMR(Monero): 48iXvX61MU24m5VGc77rXQYKmoww3dZh6hn7mEwDaLVTfGhyBKq2teoPpeBq6xvqj4itsGh6EzNTzBty6ZDDevApCFNpsJg</string> -->
 
 	<string name="srceng_get_hl2">Get Half-Life 2 DM</string>
-	<string name="srceng_get_tf2c">Get TF2C</string>
+	<string name="srceng_get_tf2c">Get TF2 1.0.1.8</string>
 	<string name="srceng_launcher_launch">Launch</string>
 	<string name="srceng_launcher_ok">OK</string>
 	<string name="srceng_launcher_error">Error</string>
@@ -22,7 +22,7 @@
 
 	<string name="new_update">Update available!</string>
 	<string name="tf2classic_game_check">Please, remove \"-game\" from command line arguments.</string>
-	<string name="tf2classic_bad_device">Sorry, your device is too bad for this game.\nYou can\'t run TF2C.</string>
+	<string name="tf2classic_bad_device">Sorry, your device is too bad for this game.\nYou can\'t run TF2C / TF2 1.0.1.8.</string>
 
 	<!-- New About dialog stuff -->
 	<string name="about_links" translatable="false">
@@ -33,11 +33,11 @@
 		<b>Source Engine Android port made by:</b>\n
 		• nillerusr\n
 		• jusic\n
-		<b>TF2C Android port made by:</b>\n
+		<b>TF2C/TF2 1.0.1.8 Android port made by:</b>\n
 		• SanyaSho\n
 		<b>Special thanks to:</b>\n
-		• danielmm8888 and old Team Fortress 2 Classic team for Team Fortress 2 Classic\n
-		• tyabus for various fixes and improvements\n
+		<!-- • danielmm8888 and old Team Fortress 2 Classic team for Team Fortress 2 Classic\n
+		• tyabus for various fixes and improvements\n -->
 		• <a href="https://youtube.com/@bvvth556gaming">bvvth556</a>, <a href="https://youtube.com/@twilightbob">Unnamed</a> and Anes for new touch config
 	</string>
 	<string name="about_copyright">

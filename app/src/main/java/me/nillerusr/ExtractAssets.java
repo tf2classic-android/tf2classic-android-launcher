@@ -11,7 +11,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.res.AssetManager;
 import android.util.Log;
 
-import me.sanyasho.tf2classic.R;
+import me.sanyasho.tf_mod.R;
 
 public class ExtractAssets
 {

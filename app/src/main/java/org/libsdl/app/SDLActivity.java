@@ -64,7 +64,7 @@ import java.util.Locale;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.sanyasho.tf2classic.R;
+import me.sanyasho.tf_mod.R;
 
 /**
     SDL Activity

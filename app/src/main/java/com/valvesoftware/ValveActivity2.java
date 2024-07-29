@@ -12,7 +12,7 @@ import android.util.Log;
 
 import me.nillerusr.ExtractAssets;
 import me.nillerusr.LauncherActivity;
-import me.sanyasho.tf2classic.R;
+import me.sanyasho.tf_mod.R;
 
 public class ValveActivity2 // not activity, i am lazy to change native methods
 {
@@ -63,7 +63,7 @@ public class ValveActivity2 // not activity, i am lazy to change native methods
 	static public boolean preInit( Context context, Intent intent )
 	{
 		mPref = context.getSharedPreferences( "mod", 0 );
-		String gamepath = mPref.getString( "gamepath", LauncherActivity.getDefaultDir() + "/srceng_tf2classic" );
+		String gamepath = mPref.getString( "gamepath", LauncherActivity.getDefaultDir() + "/srceng_tf_mod" );
 		String gamedir = intent.getStringExtra( "gamedir" );
 		if( gamedir == null || gamedir.isEmpty() )
 			gamedir = LauncherActivity.MOD_NAME;
@@ -78,7 +78,7 @@ public class ValveActivity2 // not activity, i am lazy to change native methods
 	{
 		mPref = context.getSharedPreferences( "mod", 0 );
 		ApplicationInfo appinf = context.getApplicationInfo();
-		String gamepath = mPref.getString( "gamepath", LauncherActivity.getDefaultDir() + "/srceng_tf2classic" );
+		String gamepath = mPref.getString( "gamepath", LauncherActivity.getDefaultDir() + "/srceng_tf_mod" );
 
 		String argv = intent.getStringExtra( "argv" );
 		String gamedir = intent.getStringExtra( "gamedir" );
