@@ -13,7 +13,7 @@ public class SharedUtil
 {
 	public static String TAG = "SharedUtil";
 
-	public static void startBrowser(Context ctx, String url)
+	public static void startBrowser( Context ctx, String url )
 	{
 		Intent browserIntent = new Intent( Intent.ACTION_VIEW, Uri.parse( url ) );
 		ctx.startActivity( browserIntent );
